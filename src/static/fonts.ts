@@ -1,13 +1,13 @@
 const fonts = {
   sora: {
-    bold: 'Sora-Bold',
-    extraBold: 'Sora-ExtraBold',
-    extraLight: 'Sora-ExtraLight',
-    light: 'Sora-Light',
-    medium: 'Sora-Medium',
-    regular: 'Sora-Regular',
-    semiBold: 'Sora-SemiBold',
-    thin: 'Sora-Thin',
+    700: 'Sora-Bold',
+    800: 'Sora-ExtraBold',
+    200: 'Sora-ExtraLight',
+    300: 'Sora-Light',
+    500: 'Sora-Medium',
+    400: 'Sora-Regular',
+    600: 'Sora-SemiBold',
+    100: 'Sora-Thin',
   },
 };
 

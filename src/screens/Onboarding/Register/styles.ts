@@ -13,6 +13,14 @@ export default StyleSheet.create({
   input: {
     marginTop: 20,
   },
+  checkboxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  checkboxButton: {
+    padding: 5,
+  },
   button: {
     marginTop: 20,
   },

@@ -4,6 +4,7 @@ const screens = {
   home: 'Home',
   trade: 'Trade',
   portifolio: 'Portifolio',
+  tab: 'tabs',
 };
 
 export default screens;

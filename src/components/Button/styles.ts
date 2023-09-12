@@ -10,6 +10,9 @@ export default StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
   },
+  textContainer: {
+    marginTop: -2,
+  },
   text: {
     fontWeight: '500',
     fontSize: 16,
@@ -32,5 +35,22 @@ export default StyleSheet.create({
   },
   textOutlined: {
     color: colors.primary,
+  },
+  containerLink: {
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+  },
+  textLink: {
+    color: colors.text,
+    fontSize: 12,
+  },
+  containerUnderline: {
+    paddingVertical: 0,
+    paddingHorizontal: 0,
+  },
+  textUnderline: {
+    color: colors.text,
+    textDecorationLine: 'underline',
+    fontSize: 12,
   },
 });
