@@ -12,6 +12,8 @@ export default StyleSheet.create({
   },
   textContainer: {
     marginTop: -2,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   text: {
     fontWeight: '500',
@@ -28,6 +30,15 @@ export default StyleSheet.create({
   },
   textSolidSecondary: {
     color: colors.bg,
+  },
+  containerSolidTertiary: {
+    backgroundColor: colors.primary + '16',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+  },
+  textSolidTertiary: {
+    color: colors.primary,
+    fontSize: 12,
   },
   containerOutlined: {
     borderColor: colors.text_tertiary,

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   StyleProp,
@@ -19,6 +20,10 @@ const ButtonVariations = {
     container: styles.containerSolidSecondary,
     text: styles.textSolidSecondary,
   },
+  solid_tertiary: {
+    container: styles.containerSolidTertiary,
+    text: styles.textSolidTertiary,
+  },
   outlined: {
     container: styles.containerOutlined,
     text: styles.textOutlined,
@@ -38,6 +43,7 @@ type ButtonProps = {
   style?: StyleProp<ViewStyle>;
   variation?: keyof typeof ButtonVariations;
   onPress?: () => void;
+  IconComponent?: JSX.Element;
 };
 
 const Button = ({
@@ -45,6 +51,7 @@ const Button = ({
   style,
   variation = 'solid',
   onPress,
+  IconComponent,
 }: ButtonProps): JSX.Element => {
   const Touchable = (
     variation === 'link' || variation === 'underline'
@@ -58,11 +65,14 @@ const Button = ({
       onPress={onPress}
       activeOpacity={0.8}>
       <View
-        style={
+        style={[
           variation === 'link' || variation === 'underline'
-            ? styles.textContainer
-            : null
-        }>
+            ? {marginTop: -2}
+            : null,
+          styles.textContainer,
+        ]}>
+        {IconComponent}
+
         <Text style={[styles.text, ButtonVariations[variation].text]}>
           {text}
         </Text>

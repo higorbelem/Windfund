@@ -61,6 +61,9 @@ const Icon =
 const Tabs = () => {
   return (
     <Tab.Navigator
+      sceneContainerStyle={{
+        backgroundColor: colors.bg,
+      }}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.primary,

@@ -13,5 +13,6 @@
       "#/*": ["src/*"]
     }            
   },
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "include": ["src", "src/components", "src/@types/custom.d.ts"]
 }
