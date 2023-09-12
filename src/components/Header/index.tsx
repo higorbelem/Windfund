@@ -6,8 +6,14 @@ import {useNavigation} from '@react-navigation/native';
 import colors from '#/static/colors';
 
 import styles from './styles';
+import Text from '../Text';
 
-const Header = (): JSX.Element => {
+type HeaderProps = {
+  title?: string;
+  subtitle?: string;
+};
+
+const Header = ({title, subtitle}: HeaderProps): JSX.Element => {
   const navigation = useNavigation();
 
   const onPress = () => {
@@ -23,6 +29,15 @@ const Header = (): JSX.Element => {
           <Ionicons name="arrow-back" color={colors.text} size={26} />
         </TouchableOpacity>
       )}
+
+      <View style={styles.textContainer}>
+        <Text size={17} weight={600}>
+          {title}
+        </Text>
+        <Text size={14} weight={400} color="text_secondary">
+          {subtitle}
+        </Text>
+      </View>
     </View>
   );
 };

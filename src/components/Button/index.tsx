@@ -13,28 +13,28 @@ import styles from './styles';
 
 const ButtonVariations = {
   solid: {
-    container: styles.containerSolid,
-    text: styles.textSolid,
+    container: styles().containerSolid,
+    text: styles().textSolid,
   },
   solid_secondary: {
-    container: styles.containerSolidSecondary,
-    text: styles.textSolidSecondary,
+    container: styles().containerSolidSecondary,
+    text: styles().textSolidSecondary,
   },
   solid_tertiary: {
-    container: styles.containerSolidTertiary,
-    text: styles.textSolidTertiary,
+    container: styles().containerSolidTertiary,
+    text: styles().textSolidTertiary,
   },
   outlined: {
-    container: styles.containerOutlined,
-    text: styles.textOutlined,
+    container: styles().containerOutlined,
+    text: styles().textOutlined,
   },
   underline: {
-    container: styles.containerUnderline,
-    text: styles.textUnderline,
+    container: styles().containerUnderline,
+    text: styles().textUnderline,
   },
   link: {
-    container: styles.containerLink,
-    text: styles.textLink,
+    container: styles().containerLink,
+    text: styles().textLink,
   },
 };
 
@@ -44,6 +44,7 @@ type ButtonProps = {
   variation?: keyof typeof ButtonVariations;
   onPress?: () => void;
   IconComponent?: JSX.Element;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -52,6 +53,7 @@ const Button = ({
   variation = 'solid',
   onPress,
   IconComponent,
+  disabled,
 }: ButtonProps): JSX.Element => {
   const Touchable = (
     variation === 'link' || variation === 'underline'
@@ -61,19 +63,24 @@ const Button = ({
 
   return (
     <Touchable
-      style={[styles.container, ButtonVariations[variation].container, style]}
+      style={[
+        styles(disabled).container,
+        ButtonVariations[variation].container,
+        style,
+      ]}
       onPress={onPress}
-      activeOpacity={0.8}>
+      activeOpacity={0.8}
+      disabled={disabled}>
       <View
         style={[
           variation === 'link' || variation === 'underline'
             ? {marginTop: -2}
             : null,
-          styles.textContainer,
+          styles().textContainer,
         ]}>
         {IconComponent}
 
-        <Text style={[styles.text, ButtonVariations[variation].text]}>
+        <Text style={[styles().text, ButtonVariations[variation].text]}>
           {text}
         </Text>
       </View>

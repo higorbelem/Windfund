@@ -9,9 +9,10 @@ import styles from './styles';
 
 type FundsProps = {
   data: FundDataType[];
+  onPress: (fund: FundDataType) => void;
 };
 
-const Funds = ({data}: FundsProps): JSX.Element => {
+const Funds = ({data, onPress}: FundsProps): JSX.Element => {
   return (
     <View style={styles.container}>
       <Title style={styles.title}>Funds</Title>
@@ -25,11 +26,13 @@ const Funds = ({data}: FundsProps): JSX.Element => {
           <FundItem
             key={item.id}
             id={item.id}
+            title={item.title}
             balance={item.balance}
             latestBalances={item.latestBalances}
             percentageGrowth={item.percentageGrowth}
             type={item.type}
             isFirst={index === 0}
+            onPress={() => onPress(item)}
           />
         ))}
       </ScrollView>

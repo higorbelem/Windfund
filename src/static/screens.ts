@@ -5,6 +5,7 @@ const screens = {
   trade: 'Trade',
   portifolio: 'Portifolio',
   tab: 'tabs',
+  fundDetail: 'FundDetail',
 };
 
 export default screens;

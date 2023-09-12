@@ -7,11 +7,16 @@ import Button from '#/components/Button';
 import Input from '#/components/Input';
 import Text from '#/components/Text';
 import colors from '#/static/colors';
-
-import styles from './styles';
 import screens from '#/static/screens';
 import Title from '#/components/Title';
 import Header from '#/components/Header';
+import Modal from '#/components/Modal';
+
+import styles from './styles';
+
+type FiledTypes = 'firstName' | 'lastName' | 'email' | 'password';
+
+type FormType = {[key in FiledTypes]: string};
 
 type RegisterProps = {
   navigation: NavigationProp<ParamListBase>;
@@ -19,6 +24,40 @@ type RegisterProps = {
 
 const Register = ({navigation}: RegisterProps): JSX.Element => {
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [form, setForm] = useState<FormType>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const onTextChange = (field: FiledTypes) => (text: string) => {
+    setForm(prev => ({...prev, [field]: text}));
+  };
+
+  const validateFields = () => {
+    if (
+      form.email &&
+      form.firstName &&
+      form.lastName &&
+      form.password &&
+      form.password.length >= 8 &&
+      agreeToTerms
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  const onRegister = async () => {
+    Modal.open();
+
+    setTimeout(() => {
+      navigation.navigate(screens.login);
+      Modal.close();
+    }, 1500);
+  };
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -30,14 +69,26 @@ const Register = ({navigation}: RegisterProps): JSX.Element => {
           label="First Name"
           placeholder="First Name"
           style={styles.input}
+          onChangeText={onTextChange('firstName')}
         />
-        <Input label="Last Name" placeholder="Last Name" style={styles.input} />
-        <Input label="Email" placeholder="Email" style={styles.input} />
+        <Input
+          label="Last Name"
+          placeholder="Last Name"
+          style={styles.input}
+          onChangeText={onTextChange('lastName')}
+        />
+        <Input
+          label="Email"
+          placeholder="Email"
+          style={styles.input}
+          onChangeText={onTextChange('email')}
+        />
         <Input
           label="Password"
           placeholder="Minimum 8 characters"
           style={styles.input}
           password
+          onChangeText={onTextChange('password')}
         />
 
         <View style={styles.checkboxContainer}>
@@ -50,14 +101,23 @@ const Register = ({navigation}: RegisterProps): JSX.Element => {
             />
           </TouchableOpacity>
 
-          <Text color="text_secondary" size={12} lineHeight={18}>
+          <Text
+            color="text_secondary"
+            size={12}
+            lineHeight={18}
+            style={styles.checkboxText}>
             I am over 18 years of age and I have read and agree to the{' '}
             <Button text="Terms of Service" variation="link" /> and{' '}
             <Button text="Privacy policy" variation="link" />.
           </Text>
         </View>
 
-        <Button text="Create account" style={styles.button} />
+        <Button
+          text="Create account"
+          style={styles.button}
+          disabled={!validateFields()}
+          onPress={onRegister}
+        />
 
         <View style={styles.bottomTextContainer}>
           <Text size={12} color="text_secondary">

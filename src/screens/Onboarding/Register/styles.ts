@@ -18,6 +18,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
   },
+  checkboxText: {
+    flex: 1,
+  },
   checkboxButton: {
     padding: 5,
   },

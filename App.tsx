@@ -1,12 +1,14 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
-import Routes from '#/routes';
+import Modal from './src/components/Modal';
+import Routes from './src/routes';
 
 function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Routes />
+      <Modal.Component />
     </NavigationContainer>
   );
 }

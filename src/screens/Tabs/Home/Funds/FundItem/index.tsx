@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {LineChart} from 'react-native-svg-charts';
@@ -16,51 +16,45 @@ import {getValueColor} from '#/helpers/color';
 import styles from './styles';
 
 type fundTypeIconType = {
-  [key in FundTypes]: {
-    icon: JSX.Element;
-    title: string;
-  };
+  [key in FundTypes]: JSX.Element;
 };
 
 const fundTypeData: fundTypeIconType = {
-  wind: {
-    icon: <Feather name="wind" color={colors.blue} size={20} />,
-    title: 'Wind Fund',
-  },
-  solar: {
-    icon: <Feather name="sun" color={colors.yellow} size={20} />,
-    title: 'Solar Fund',
-  },
-  nature: {
-    icon: <Ionicons name="leaf-outline" color={colors.green} size={20} />,
-    title: 'Nature Fund',
-  },
+  wind: <Feather name="wind" color={colors.blue} size={20} />,
+  solar: <Feather name="sun" color={colors.yellow} size={20} />,
+  nature: <Ionicons name="leaf-outline" color={colors.green} size={20} />,
 };
 
 type FundItemType = {
   isFirst: boolean;
+  onPress?: () => void;
 };
 
 const FundItem = ({
+  title,
   balance,
   latestBalances,
   percentageGrowth,
   type,
   isFirst,
+  onPress,
 }: FundDataType & FundItemType): JSX.Element => {
   const fundType = fundTypeData[type];
 
   return (
-    <View style={[styles.container, {marginLeft: isFirst ? 0 : 20}]}>
-      {fundType.icon}
+    <TouchableOpacity
+      style={[styles.container, {marginLeft: isFirst ? 0 : 20}]}
+      onPress={onPress}
+      activeOpacity={0.8}>
+      {fundType}
 
       <Text size={14} weight={600} style={styles.text}>
-        {fundType.title}
+        {title}
       </Text>
 
       <LineChart
         style={styles.chart}
-        data={latestBalances}
+        data={latestBalances.slice(-10).map(item => item.value)}
         contentInset={{top: 20, bottom: 20}}
         curve={shape.curveNatural}
         svg={{
@@ -76,7 +70,7 @@ const FundItem = ({
 
         <Percentage value={percentageGrowth} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
