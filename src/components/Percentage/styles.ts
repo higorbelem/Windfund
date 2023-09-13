@@ -15,4 +15,8 @@ export default (value: number) =>
     percentageText: {
       color: getValueColor(value),
     },
+    valueText: {
+      color: getValueColor(value),
+      marginLeft: 5,
+    },
   });

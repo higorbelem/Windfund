@@ -8,7 +8,7 @@ import {currencyFormat} from '#/helpers/currency';
 
 import styles from './styles';
 
-const SIZE_PER_ITEM = 50;
+const SIZE_PER_ITEM = 30;
 const GAP_DATES = 5;
 
 type DetailChartProps = {

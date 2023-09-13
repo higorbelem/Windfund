@@ -8,7 +8,7 @@ export default (disabled?: boolean) =>
       alignItems: 'center',
       justifyContent: 'center',
       paddingVertical: 16,
-      paddingHorizontal: 32,
+      paddingHorizontal: 20,
       borderRadius: 4,
       opacity: disabled ? 0.5 : 1,
     },

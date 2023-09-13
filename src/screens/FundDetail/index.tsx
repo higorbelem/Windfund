@@ -15,6 +15,8 @@ import styles from './styles';
 import DetailChart from './DetailChart';
 import StatItem from './StatItem';
 import Breakdown from './Breakdown';
+import YourPortfolio from './YourPortfolio';
+import PriceFilter from './PriceFilter';
 
 type FundDetailProps = {
   route: RouteProp<{params: {data: FundDataType}}, 'params'>;
@@ -42,14 +44,17 @@ const FundDetail = ({route}: FundDetailProps): JSX.Element => {
       <View style={style.balanceContainer}>
         <View style={style.balanceValuesContainer}>
           <Text size={24} weight={600}>
-            {currencyFormat(18.23)}
+            {currencyFormat(data.balance)}
           </Text>
           <Text size={24} weight={600}>
             2022
           </Text>
         </View>
 
-        <Percentage value={3.51} />
+        <Percentage
+          percentage={data.percentageGrowth}
+          value={data.valueGrowth}
+        />
       </View>
 
       <ScrollView
@@ -57,8 +62,10 @@ const FundDetail = ({route}: FundDetailProps): JSX.Element => {
         showsHorizontalScrollIndicator={false}
         style={style.chartScroll}
         ref={scrollViewRef}>
-        <DetailChart data={data.latestBalances} />
+        <DetailChart data={data.latestPrices} />
       </ScrollView>
+
+      <PriceFilter />
 
       <View style={style.statsWrapper}>
         <Title>{'Info & Stats'}</Title>
@@ -87,6 +94,8 @@ const FundDetail = ({route}: FundDetailProps): JSX.Element => {
           categories={categoriesMockedData}
         />
       </View>
+
+      <YourPortfolio data={data} />
     </ScrollView>
   );
 };

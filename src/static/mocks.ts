@@ -32,7 +32,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$17.68',
       vintageRange: '$17.74',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '28-08-2022', value: 16.29},
       {date: '29-08-2022', value: 35.12},
       {date: '30-08-2022', value: 42.76},
@@ -68,6 +68,11 @@ export const fundMockedData: FundDataType[] = [
       {date: '29-09-2022', value: 24.81},
       {date: '30-09-2022', value: 40.43},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
   {
     id: 'SFND',
@@ -88,7 +93,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$15.94',
       vintageRange: '$16.12',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '01-10-2022', value: 42.12},
       {date: '02-10-2022', value: 55.34},
       {date: '03-10-2022', value: 29.68},
@@ -120,6 +125,11 @@ export const fundMockedData: FundDataType[] = [
       {date: '29-10-2022', value: 16.45},
       {date: '30-10-2022', value: 49.67},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
   {
     id: 'GFND',
@@ -140,7 +150,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$12.45',
       vintageRange: '$12.72',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '01-11-2022', value: 58.21},
       {date: '02-11-2022', value: 34.45},
       {date: '03-11-2022', value: 49.78},
@@ -172,6 +182,11 @@ export const fundMockedData: FundDataType[] = [
       {date: '29-11-2022', value: 47.56},
       {date: '30-11-2022', value: 17.89},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
   {
     id: 'BFND',
@@ -192,7 +207,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$14.32',
       vintageRange: '$14.45',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '01-12-2022', value: 18.76},
       {date: '02-12-2022', value: 37.89},
       {date: '03-12-2022', value: 20.56},
@@ -224,6 +239,11 @@ export const fundMockedData: FundDataType[] = [
       {date: '29-12-2022', value: 28.67},
       {date: '30-12-2022', value: 32.78},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
   {
     id: 'IFND',
@@ -244,7 +264,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$16.75',
       vintageRange: '$16.98',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '01-01-2023', value: 35.76},
       {date: '02-01-2023', value: 42.89},
       {date: '03-01-2023', value: 27.56},
@@ -276,6 +296,11 @@ export const fundMockedData: FundDataType[] = [
       {date: '29-01-2023', value: 28.67},
       {date: '30-01-2023', value: 30.78},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
   {
     id: 'DFND',
@@ -296,7 +321,7 @@ export const fundMockedData: FundDataType[] = [
       ter: '$15.84',
       vintageRange: '$15.99',
     },
-    latestBalances: [
+    latestPrices: [
       {date: '01-02-2023', value: 39.12},
       {date: '02-02-2023', value: 47.34},
       {date: '03-02-2023', value: 31.78},
@@ -329,5 +354,10 @@ export const fundMockedData: FundDataType[] = [
       {date: '02-03-2023', value: 32.45},
       {date: '03-03-2023', value: 10.56},
     ],
+    credits: 18,
+    creditValue: 328.14,
+    creditPercentageGrowth: 8.41,
+    creditLastPurchace: '2023-08-10',
+    creditsRetired: 28,
   },
 ];

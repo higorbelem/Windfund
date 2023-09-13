@@ -28,7 +28,7 @@ const Funds = ({data, onPress}: FundsProps): JSX.Element => {
             id={item.id}
             title={item.title}
             balance={item.balance}
-            latestBalances={item.latestBalances}
+            latestPrices={item.latestPrices}
             percentageGrowth={item.percentageGrowth}
             type={item.type}
             isFirst={index === 0}

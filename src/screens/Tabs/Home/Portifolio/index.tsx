@@ -32,7 +32,7 @@ const Portifolio = ({
             {currencyFormat(balance)}
           </Text>
 
-          <Percentage value={percentageGrowth} />
+          <Percentage percentage={percentageGrowth} />
         </View>
 
         <Button

@@ -35,7 +35,7 @@ type FundItemType = {
 const FundItem = ({
   title,
   balance,
-  latestBalances,
+  latestPrices,
   percentageGrowth,
   type,
   isFirst,
@@ -56,7 +56,7 @@ const FundItem = ({
 
       <LineChart
         style={styles.chart}
-        data={latestBalances.slice(-10).map(item => item.value)}
+        data={latestPrices.slice(-10).map(item => item.value)}
         contentInset={{top: 20, bottom: 20}}
         curve={shape.curveNatural}
         svg={{
@@ -70,7 +70,7 @@ const FundItem = ({
           {currencyFormat(balance)}
         </Text>
 
-        <Percentage value={percentageGrowth} />
+        <Percentage percentage={percentageGrowth} />
       </View>
     </TouchableOpacity>
   );

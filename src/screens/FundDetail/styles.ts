@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, Platform, StyleSheet} from 'react-native';
 
 const {width} = Dimensions.get('window');
 
@@ -9,8 +9,8 @@ export default (topSpace: number, bottomSpace: number) =>
       height: '100%',
     },
     scrollContent: {
-      paddingTop: topSpace,
-      paddingBottom: bottomSpace,
+      paddingTop: Platform.OS === 'android' ? 20 : topSpace,
+      paddingBottom: Platform.OS === 'android' ? 20 : bottomSpace,
       paddingHorizontal: 20,
       alignItems: 'center',
     },
@@ -28,6 +28,7 @@ export default (topSpace: number, bottomSpace: number) =>
     },
     statsWrapper: {
       width: '100%',
+      marginTop: 40,
     },
     statsContainer: {},
     statsContainerRow: {

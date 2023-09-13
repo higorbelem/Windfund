@@ -4,7 +4,7 @@ import {TextStyle} from 'react-native';
 import Text from '#/components/Text';
 
 type InputProps = {
-  children: string;
+  children: any;
   style?: TextStyle;
 };
 
