@@ -3,6 +3,7 @@ import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Octicons from 'react-native-vector-icons/Octicons';
 import {LineChart} from 'react-native-svg-charts';
 import * as shape from 'd3-shape';
 
@@ -23,6 +24,7 @@ const fundTypeData: fundTypeIconType = {
   wind: <Feather name="wind" color={colors.blue} size={20} />,
   solar: <Feather name="sun" color={colors.yellow} size={20} />,
   nature: <Ionicons name="leaf-outline" color={colors.green} size={20} />,
+  tech: <Octicons name="gear" color={colors.blue} size={20} />,
 };
 
 type FundItemType = {
